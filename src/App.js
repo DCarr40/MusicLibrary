@@ -4,6 +4,7 @@ import MusicTable from "./components/MusicTable/MusicTable";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import SearchBar from "./components/SearchBar/SearchBar";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
