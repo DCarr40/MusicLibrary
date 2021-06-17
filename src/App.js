@@ -9,6 +9,11 @@ class App extends Component {
     super(props);
     this.state = {
       music: null,
+      title: "",
+      album: "",
+      artist: "",
+      genre: "",
+      releaseDate: "",
     };
   }
 
@@ -20,7 +25,12 @@ class App extends Component {
     try {
       let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
       this.setState({
-        music: response.data
+        music: response.data,
+        title: response.data.title,
+        album: response.data.album,
+        artist: response.data.artist,
+        genre: response.data.genre,
+        releaseDate: response.data.releaseDate,
       });
       console.log(this.state.music);
     } catch (err) {
@@ -34,7 +44,12 @@ class App extends Component {
     console.log("Component rendered!");
     return (
       <React.Fragment>
-        <MusicTable/>
+        <h1>Music</h1>
+        {this.state.music ? (
+          <MusicTable music={this.state.music} />
+        ) : (
+            <h1>Loading....</h1>
+            )}
       </React.Fragment>
     );
   }
