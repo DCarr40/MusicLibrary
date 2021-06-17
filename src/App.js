@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import axios from "axios";
+import MusicTable from "./components/MusicTable/MusicTable";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +20,7 @@ class App extends Component {
     try {
       let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
       this.setState({
-        music: response.data.results,
+        music: response.data
       });
       console.log(this.state.music);
     } catch (err) {
@@ -31,7 +34,7 @@ class App extends Component {
     console.log("Component rendered!");
     return (
       <React.Fragment>
-
+        <MusicTable/>
       </React.Fragment>
     );
   }
