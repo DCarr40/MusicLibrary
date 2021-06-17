@@ -35,7 +35,7 @@ class App extends Component {
     console.log("Component rendered!");
     return (
       <React.Fragment>
-        <h1>Music</h1>
+        <h1>Music Table</h1>
         {this.state.music ? (
           <MusicTable music={this.state.music} />
         ) : (
