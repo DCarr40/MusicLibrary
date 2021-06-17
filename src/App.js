@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from "axios";
 import MusicTable from "./components/MusicTable/MusicTable";
-import NavigationBar from "./components/NavigationBar/NavigationBar";
+import NavBar from "./components/NavBar/NavBar";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 
@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      music: null,
+      music:[],
     };
   }
 
@@ -35,12 +35,9 @@ class App extends Component {
     console.log("Component rendered!");
     return (
       <React.Fragment>
-        <h1>Music Table</h1>
-        {this.state.music ? (
-          <MusicTable music={this.state.music} />
-        ) : (
-            <h1>Loading....</h1>
-            )}
+        {/* <NavBar /> */}
+        {/* <SearchBar/> */}
+        <MusicTable music={this.state.music} />
       </React.Fragment>
     );
   }
