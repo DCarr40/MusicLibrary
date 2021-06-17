@@ -9,11 +9,6 @@ class App extends Component {
     super(props);
     this.state = {
       music: null,
-      title: "",
-      album: "",
-      artist: "",
-      genre: "",
-      releaseDate: "",
     };
   }
 
@@ -26,11 +21,6 @@ class App extends Component {
       let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
       this.setState({
         music: response.data,
-        title: response.data.title,
-        album: response.data.album,
-        artist: response.data.artist,
-        genre: response.data.genre,
-        releaseDate: response.data.releaseDate,
       });
       console.log(this.state.music);
     } catch (err) {
