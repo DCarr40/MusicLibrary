@@ -21,7 +21,7 @@ class App extends Component {
   async fetchMusic() {
     try {
        let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
-       debugger; this.setState({
+        this.setState({
          music: response.data,
       });
       console.log(this.state.music);
