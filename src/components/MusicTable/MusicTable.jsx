@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const MusicTable = ({ music }) => {
-    let renderedMusic = music.map((song) => {
+     let renderedMusic = music.map((song) => {
         return (
             <table>
                 <thead>

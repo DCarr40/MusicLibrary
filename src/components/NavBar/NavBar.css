@@ -40,6 +40,12 @@
     
 }
 
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+
 .center {
     display: block;
     margin-left: auto;
