@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       music: [],
-      filter:""
+      filters:""
     };
   }
 
@@ -33,20 +33,47 @@ class App extends Component {
   }
 
   handleChange(event){
-    console.log(event)
+
     event.preventDefault();
-    this.setState({filter:event.target.value})
+    this.setState({filters:event.target.value})
+    console.log(this.state.filters)
   }
+
+  // gefiltefFish(){
+  //   let musicData = this.state.music;
+  //   let result = musicData.filter(trimData =>(item) {
+  //       if(item.textContent.toLowerCase().indexOf(musicData) !== item.textContent.toLowerCase().indexOf(musicData)){
+  //         item.closest("li").style.display = "block";
+  //       }
+  //   });
+  // }
+
 
 
   render() {
+  
+    let newArrayOfMusic = this.state.music.filter(song => {
+      if(song.title.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      else if(song.album.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      else if(song.artist.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      else if(song.genre.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      else if(song.releaseDate.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      return true;
+    });
+      
+
+
+ 
+
+
+    //
     console.log(this.state.music);
     console.log("Component rendered!");
     return (
       <React.Fragment>
         <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
-        <MusicTable music={this.state.music} />
+        <MusicTable music={newArrayOfMusic} />
       </React.Fragment>
     );
   }
@@ -55,3 +82,10 @@ class App extends Component {
 }
 
 export default App;
+
+/* 
+array.filter -- remember if conditional returns true, song is part of new array
+array.filter(.includes)-- look up .includes
+once you search, make sure you save results to a variable, and pass in that variable to music table
+
+*/
