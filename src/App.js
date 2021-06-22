@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from "axios";
 import MusicTable from "./components/MusicTable/MusicTable";
 import NavBar from "./components/NavBar/NavBar";
-// import SearchBar from "./components/SearchBar/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       music: [],
+      filter:""
     };
   }
 
@@ -31,6 +32,12 @@ class App extends Component {
     }
   }
 
+  handleChange(event){
+    console.log(event)
+    event.preventDefault();
+    this.setState({filter:event.target.value})
+  }
+
 
   render() {
     console.log(this.state.music);
@@ -38,7 +45,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar />
-        {/* <SearchBar/> */}
+        <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={this.state.music} />
       </React.Fragment>
     );

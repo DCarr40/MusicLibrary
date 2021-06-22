@@ -23,7 +23,7 @@ const MusicTable = ({ music }) => {
 
     return (
         <div>
-            <table className = "tbl-header " cellpadding="0" cellspacing="0" border="0">
+            <table className = "tbl-header perfectCell"  border="0">
                 <thead>
                     <tr>
                         <th>Title</th>
