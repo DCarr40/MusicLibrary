@@ -54,10 +54,10 @@ class App extends Component {
   
     let newArrayOfMusic = this.state.music.filter(song => {
       if(song.title.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      else if(song.album.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      else if(song.artist.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      else if(song.genre.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      else if(song.releaseDate.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      // else if(song.album.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      // else if(song.artist.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      // else if(song.genre.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
+      // else if(song.releaseDate.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
       return true;
     });
       

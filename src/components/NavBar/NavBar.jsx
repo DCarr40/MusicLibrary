@@ -12,17 +12,6 @@ function NavigationBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <a className="navbar-brand active" href="./index.html">Home</a>
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <a className="nav-link " aria-current="page" href="./aboutme.html">About Me</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="./portfolio.html">Portfolio</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
