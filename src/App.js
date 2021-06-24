@@ -22,7 +22,7 @@ class App extends Component {
   //  test comment
   async fetchMusic() {
     try {
-       let response = await axios.get("http://www.devcodecampmusiclibrary.com/api/music");
+       let response = await axios.get("http://localhost:5000/api/songs");
         this.setState({
          music: response.data,
       });
@@ -49,24 +49,18 @@ class App extends Component {
   // }
 
 
-
   render() {
-  
     let newArrayOfMusic = this.state.music.filter(song => {
-      if(song.title.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      // else if(song.album.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      // else if(song.artist.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      // else if(song.genre.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      // else if(song.releaseDate.toLowerCase().includes(this.state.filters.toLowerCase())){return true;}
-      return true;
+      return(
+      song.title.toLowerCase().includes(this.state.filters.toLowerCase()) ||
+      song.album.toLowerCase().includes(this.state.filters.toLowerCase()) ||
+      song.artist.toLowerCase().includes(this.state.filters.toLowerCase()) ||
+      song.genre.toLowerCase().includes(this.state.filters.toLowerCase()) ||
+      song.releaseDate.toLowerCase().includes(this.state.filters.toLowerCase())
+      )
     });
       
 
-
- 
-
-
-    //
     console.log(this.state.music);
     console.log("Component rendered!");
     return (

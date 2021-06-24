@@ -6,7 +6,7 @@ const MusicTable = ({ music }) => {
      let renderedMusic = music.map((song) => {
          return (
             <div >
-                    <table className ="tbl-content perfectCell"  border="0">
+                    <table className ="tbl-content perfectCell">
                         <tbody>
                             <tr>
                                 <td key={song.title}>{song.title}</td>
@@ -23,7 +23,7 @@ const MusicTable = ({ music }) => {
 
     return (
         <div>
-            <table className = "tbl-header perfectCell"  border="0">
+            <table className = "tbl-header perfectCell">
                 <thead>
                     <tr>
                         <th>Title</th>
