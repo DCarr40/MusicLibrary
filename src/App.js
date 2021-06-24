@@ -3,7 +3,7 @@ import axios from "axios";
 import MusicTable from "./components/MusicTable/MusicTable";
 import NavBar from "./components/NavBar/NavBar";
 import SearchBar from "./components/SearchBar/SearchBar";
-
+import Form from "./components/Form/Form";
 
 class App extends Component {
   constructor(props) {
@@ -68,6 +68,7 @@ class App extends Component {
         <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
+        <Form />
       </React.Fragment>
     );
   }
@@ -77,9 +78,4 @@ class App extends Component {
 
 export default App;
 
-/* 
-array.filter -- remember if conditional returns true, song is part of new array
-array.filter(.includes)-- look up .includes
-once you search, make sure you save results to a variable, and pass in that variable to music table
 
-*/
