@@ -5,8 +5,8 @@ import "./MusicTable.css";
 const MusicTable = ({ music }) => {
      let renderedMusic = music.map((song) => {
          return (
-            <div >
-                    <table className ="tbl-content perfectCell">
+            <div className = "table-wrapper">
+                    <table className ="fl-table">
                         <tbody>
                             <tr>
                                 <td key={song.title}>{song.title}</td>
@@ -22,8 +22,8 @@ const MusicTable = ({ music }) => {
      });
 
     return (
-        <div>
-            <table className = "tbl-header perfectCell">
+        <div className = "table-wrapper">
+            <table className = "fl-table">
                 <thead>
                     <tr>
                         <th>Title</th>
