@@ -20,22 +20,22 @@ const MusicTable = ({ music }) => {
      });
 
     return (
-        <div className = "table-position">
-            <div className = "table-wrapper">
-                <table className = "fl-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Album</th>
-                            <th>Artist</th>
-                            <th>Genre</th>
-                            <th>Release Date</th>
-                        </tr>
-                    </thead>
-                    {renderedMusic}
-                </table>
+       
+        <div className = "table-wrapper">
+            <table className = "fl-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Album</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
+                        <th>Release Date</th>
+                    </tr>
+                </thead>
+                {renderedMusic}
+            </table>
                
-            </div>
+            
         </div>);
     };
 
