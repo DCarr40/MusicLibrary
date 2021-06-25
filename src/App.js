@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import SearchBar from "./components/SearchBar/SearchBar";
 import FormComponent from "./components/Form/FormComponent";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +35,8 @@ class App extends Component {
 
   handleChange(event){
 
-    event.preventDefault();
-    this.setState({filters:event.target.value})
+    event.preventDefault();// prevents whole page from reloading on event change
+    this.setState({filters:event.target.value})// sets filters value to target event value
     console.log(this.state.filters)
   }
 
@@ -44,11 +45,14 @@ class App extends Component {
   handleSubmit(event){
     const myform = document.getElementById("myform");
     myform.addEventListener("submit",(event) => {
-        event.preventDefault();
-
+        event.preventDefault();// prevents whole page from reloading on event change
+        const req = new XMLHttpRequest();//instance of an XMLHttpRequest object
+        req.open("post", "http://localhost:5000/api/songs")// opens the request and use the post method at the URL
+        req.onload = () => {
+          console.log(req.responseText);// logs whatever the request spits out to the console
+        }
+        req.send(new FormData(myform));// sends the request and FormData matches name and value pairs easily with backend
         console.log("Form submitted");
-
-
     })
   }
 
