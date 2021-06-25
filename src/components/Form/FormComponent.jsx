@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Form.css";
 
-function TheForm(props){
+function Form(props){
     return(
         <div className="form-box">
             <form>
@@ -29,21 +29,4 @@ function TheForm(props){
         </div>
     )
 }
-export default TheForm;
-//     return (<div>
-
-//     </div>)
-   
-
-
-//     //     <div className="form-box">
-//     //         <form>
-//     //             <div className="user-box">
-//     //                 <input></input>
-//     //                 <label>Username</label>         
-//     //                 <input></input>
-//     //                 <label>Password</label>
-//     //             </div>
-//     //         </form>
-//     //   </div>
-// }
+export default Form;

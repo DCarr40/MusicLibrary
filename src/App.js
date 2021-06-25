@@ -3,7 +3,7 @@ import axios from "axios";
 import MusicTable from "./components/MusicTable/MusicTable";
 import NavBar from "./components/NavBar/NavBar";
 import SearchBar from "./components/SearchBar/SearchBar";
-import Form from "./components/Form/Form";
+import FormComponent from "./components/Form/FormComponent";
 
 class App extends Component {
   constructor(props) {
@@ -39,6 +39,8 @@ class App extends Component {
     console.log(this.state.filters)
   }
 
+
+
   // gefiltefFish(){
   //   let musicData = this.state.music;
   //   let result = musicData.filter(trimData =>(item) {
@@ -68,7 +70,7 @@ class App extends Component {
         <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
-        <Form />
+        <FormComponent />
       </React.Fragment>
     );
   }

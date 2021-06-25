@@ -5,8 +5,7 @@ import "./MusicTable.css";
 const MusicTable = ({ music }) => {
      let renderedMusic = music.map((song) => {
          return (
-            <div className = "table-wrapper">
-                    <table className ="fl-table">
+
                         <tbody>
                             <tr>
                                 <td key={song.title}>{song.title}</td>
@@ -16,25 +15,27 @@ const MusicTable = ({ music }) => {
                                 <td key={song.releaseDate}>{song.releaseDate}</td>
                             </tr>
                         </tbody>
-                    </table>   
-            </div>
+
         );
      });
 
     return (
-        <div className = "table-wrapper">
-            <table className = "fl-table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Album</th>
-                        <th>Artist</th>
-                        <th>Genre</th>
-                        <th>Release Date</th>
-                    </tr>
-                </thead>
-            </table>
-            {renderedMusic}
+        <div className = "table-position">
+            <div className = "table-wrapper">
+                <table className = "fl-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Album</th>
+                            <th>Artist</th>
+                            <th>Genre</th>
+                            <th>Release Date</th>
+                        </tr>
+                    </thead>
+                    {renderedMusic}
+                </table>
+               
+            </div>
         </div>);
     };
 
