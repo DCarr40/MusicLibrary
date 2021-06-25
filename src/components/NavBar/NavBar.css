@@ -1,10 +1,6 @@
 .background-container{
     height:100vh;
-    background-image:linear-gradient(
-        to bottom left,
-        rgba(2, 154, 255, 0.8),
-        rgba(2, 209, 255, 0.2));
-        /* url(picturesforcoding/luke-chesser-pJadQetzTkI-unsplash.jpg); */
+    background-color:#324960;
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: top;
@@ -15,11 +11,7 @@
 .background-container2{
     height:30vh;
     width:100vw;
-    background-image:linear-gradient(
-        to bottom left,
-        rgba(2, 10, 255, 0.8),
-        rgba(2, 91, 255, 0.2));
-        /* url(picturesforcoding/luke-chesser-pJadQetzTkI-unsplash.jpg); */
+    background-color:#324960;
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: top;
@@ -78,8 +70,9 @@
   }
 
   .navbar-style{
-    background-image:linear-gradient(
-        to bottom left,
-        rgba(2, 154, 255, 0.8),
-        rgba(2, 209, 255, 0.2));
+    background-color:#324960;
+  }
+
+  .center-me{
+    left: 50%;
   }
