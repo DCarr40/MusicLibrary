@@ -41,14 +41,16 @@ class App extends Component {
 
 
 
-  // gefiltefFish(){
-  //   let musicData = this.state.music;
-  //   let result = musicData.filter(trimData =>(item) {
-  //       if(item.textContent.toLowerCase().indexOf(musicData) !== item.textContent.toLowerCase().indexOf(musicData)){
-  //         item.closest("li").style.display = "block";
-  //       }
-  //   });
-  // }
+  handleSubmit(event){
+    const myform = document.getElementById("myform");
+    myform.addEventListener("submit",(event) => {
+        event.preventDefault();
+
+        console.log("Form submitted");
+
+
+    })
+  }
 
 
   render() {
@@ -70,7 +72,7 @@ class App extends Component {
         <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
-        <FormComponent />
+        <FormComponent handleSubmit={(event)=>this.handleSubmit(event)}/>
       </React.Fragment>
     );
   }
