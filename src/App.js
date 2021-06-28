@@ -42,19 +42,6 @@ class App extends Component {
 
 
 
-  handleSubmit(event){
-    const myform = document.getElementById("myform");
-    myform.addEventListener("submit",(event) => {
-        event.preventDefault();// prevents whole page from reloading on event change
-        const req = new XMLHttpRequest();//instance of an XMLHttpRequest object
-        req.open("post", "http://localhost:5000/api/songs")// opens the request and use the post method at the URL
-        req.onload = () => {
-          console.log(req.responseText);// logs whatever the request spits out to the console
-        }
-        req.send(new FormData(myform));// sends the request and FormData matches name and value pairs easily with backend
-        console.log("Form submitted");
-    })
-  }
 
 
   render() {
@@ -76,7 +63,7 @@ class App extends Component {
         <NavBar />
         <SearchBar handleChange={(event)=>this.handleChange(event)}/>
         <MusicTable music={newArrayOfMusic} />
-        <FormComponent handleSubmit={(event)=>this.handleSubmit(event)}/>
+        <FormComponent />
       </React.Fragment>
     );
   }
